@@ -50,3 +50,12 @@ examples/button.rs
 ### Buffers
  - [ ] Buffer (ImageView)
  - [ ] HardwareBuffer
+
+## License
+
+This project is licensed under either of the following licenses, at your option:
+
+- Apache License 2.0
+- MIT License
+
+You may choose the license that best suits your needs.
