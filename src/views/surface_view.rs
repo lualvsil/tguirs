@@ -23,9 +23,8 @@ impl Activity {
 }
 
 impl crate::View for SurfaceView {
-	fn get_id(&self) -> i32 {
-		self.id
-	}
+	fn get_id(&self) -> i32 { self.id }
+	fn get_act(&self) -> &Activity { &self.a }
 }
 
 impl SurfaceView {

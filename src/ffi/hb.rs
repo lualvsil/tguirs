@@ -9,10 +9,10 @@ const LIBANDROID_SO: &str = "libandroid.so";
 #[repr(C)]
 pub struct AHardwareBuffer {}
 
-#[link(name="android")]
-extern "C" {
-	fn android_get_device_api_level() -> c_int;
-}
+// #[link(name="android")]
+// extern "C" {
+// 	fn android_get_device_api_level() -> c_int;
+// }
 
 pub struct Lib {
 	handle: *mut c_void,
@@ -33,10 +33,10 @@ impl Lib {
 				return;
 			}
 			
-			let apilevel = android_get_device_api_level();
-			if apilevel < 26 {
-				panic!("Android API {apilevel} unsupported");
-			}
+			// let apilevel = android_get_device_api_level();
+			// if apilevel < 26 {
+			// 	panic!("Android API {apilevel} unsupported");
+			// }
 			
 			let libname = CString::new(LIBANDROID_SO).unwrap();
 			let handle = libc::dlopen(libname.as_ptr(), libc::RTLD_LAZY | libc::RTLD_LOCAL);

@@ -42,4 +42,11 @@ impl Activity {
 			v: items::Visibility::Visible.into(),
 		}
 	}
+	
+	pub fn gen_view(&self, v: &impl View) -> items::View {
+		items::View {
+			aid: self.id,
+			id: v.get_id()
+		}
+	}
 }
